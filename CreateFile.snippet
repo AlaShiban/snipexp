@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Create File</Title>
+			<Shortcut>createfile</Shortcut>
+			<Description>Create a StorageFile in a specified StorageFolder</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object>
+					<ID>dir</ID>
+					<ToolTip>StorageFolder in which to create the file</ToolTip>
+					<Default>dir</Default>
+				</Object>
+				<Literal>
+					<ID>file</ID>
+					<ToolTip>Filename to create</ToolTip>
+					<Default>file</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[$dir$.createFileAsync("$file$").done(function (file) {
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

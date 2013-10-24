@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Delete File</Title>
+			<Shortcut>deletefile</Shortcut>
+			<Description>Delete a StorageFile</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object>
+					<ID>file</ID>
+					<ToolTip>File to delete</ToolTip>
+					<Default>file</Default>
+				</Object>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[$file$.deleteAsync().done(function () {
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

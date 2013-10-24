@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Read a file in settings</Title>
+      <Description>Open and read from a file in the roaming settings</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>readroamingfile</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>filename</ID>
+          <Type />
+          <ToolTip>The file to open.</ToolTip>
+          <Default>filename</Default>
+          <Function />
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$">
+        <![CDATA[var roamingFolder = Windows.Storage.ApplicationData.current.roamingFolder;
+roamingFolder.createFileAsync("$filename$", Windows.Storage.CreationCollisionOption.openIfExists).then(function (file) {
+	Windows.Storage.FileIO.readTextAsync(file).then(function (text) {
+
+	});
+});]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Download RSS Feed</Title>
+			<Shortcut>getrss</Shortcut>
+			<Description>Download the contents of an RSS feed</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Imports>
+				<Import>
+					<Namespace>Windows.Web.Syndication</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>uri</ID>
+					<ToolTip>Uri to download</ToolTip>
+					<Default>http://localhost/</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[new Windows.Web.Syndication.SyndicationClient().retrieveFeedAsync(new Windows.Foundation.Uri("$uri$")).then(function (feed) {
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

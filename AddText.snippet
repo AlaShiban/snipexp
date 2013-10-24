@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Add Text to clipboard</Title>
+      <Description>Add text to the clipboard</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>CopyText</Shortcut>
+    </Header>
+    <Snippet>
+      <References />
+      <Imports>
+        <Import>
+          <Namespace>Windows.ApplicationModel.DataTransfer</Namespace>
+        </Import>
+      </Imports>
+      <Declarations />
+      <Code Language="JavaScript" Kind="method body" Delimiter="$"><![CDATA[// create datapackage
+var dataPackage = new DataPackage();
+dataPackage.SetText("Hello world");
+
+// add to clipboard
+Clipboard.SetContent(dataPackage);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="2.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Get the location of a device</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Get the location of a device</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with the screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Get the location of a device
+myapp.$MyScreen$.MyMethod_execute = function (screen) {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (pos) {
+            screen.MyLocation.latitude = pos.coords.latitude.toString();
+            screen.MyLocation.longitude = pos.coords.longitude.toString();
+        });
+    }
+    else {
+        alert("Geolocation not supported");
+    }
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

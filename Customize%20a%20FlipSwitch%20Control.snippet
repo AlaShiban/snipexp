@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Customize a FlipSwitch Control</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Customize a FlipSwitch Control</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyFlipSwitch</ID>
+          <ToolTip>Replace with the control's name</ToolTip>
+          <Default>MyFlipSwitch</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Customize a FlipSwitch control
+myapp.$MyScreen$.MyFlipSwitch_render = function (element, contentItem) {
+    createBooleanSwitch(element, contentItem);
+};
+
+function createBooleanSwitch(element, contentItem) {
+    var $$flipSwitch = $$('<select data-role="slider"></select>').appendTo($$(element));
+    $$('<option value="false">false</option>').appendTo($$flipSwitch);
+    $$('<option value="true">true</option>').appendTo($$flipSwitch);
+
+    // set select value to match the original contentItem.value
+    $$flipSwitch.val((contentItem.value) ? "true" : "false");
+
+    // add listener to update contentItem's value if slider changes
+    $$flipSwitch.change(function () {
+        contentItem.value = ($$flipSwitch.val() == "true");
+    });
+
+    // visually refresh the slider.
+    $$flipSwitch.slider().slider("refresh");
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

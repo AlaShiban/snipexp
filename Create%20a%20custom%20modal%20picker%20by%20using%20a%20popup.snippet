@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create a custom modal picker by using a popup</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Create a custom modal picker by using a popup</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Products</ID>
+          <ToolTip>Replace with the name of the bound collection</ToolTip>
+          <Default>Products</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Create a custom modal picker by using a popup
+myapp.$MyScreen$.created = function (screen) {
+    screen.findContentItem("$Products$").dataBind("value.selectedItem", function (newValue) {
+        if (newValue !== undefined && newValue !== null) {
+            //Whenever selectedItem for $Products$ changes, update the Product value on the main page 
+            screen.Order_Detail.setProduct(screen.$Products$.selectedItem);
+
+            //Close popup, if one is up. 
+            screen.closePopup();
+        }
+    });
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.1.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Adjust the UI for different form factors</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Adjust the UI for different form factors</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript"><![CDATA[// Adjust the UI for different form factors
+myapp.$MyScreen$.FieldToHide_postRender = function (element, contentItem) {
+    $$(element).addClass("hidden-on-phone");
+};
+// Add the following to the @media section of the user-customizations.css file.
+// .hidden-on-phone {
+//     display: none;
+// }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

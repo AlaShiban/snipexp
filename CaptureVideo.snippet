@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Capture Video</Title>
+      <Description>Capture a video using the Camera UI</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>CapVideo</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Windows.Media.Capture</Namespace>
+        </Import>
+      </Imports>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$">
+		<![CDATA[var dialog = new Windows.Media.Capture.CameraCaptureUI();
+dialog.captureFileAsync(Windows.Media.Capture.CameraCaptureUIMode.Video).done(function (file) {
+});]]>
+		</Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

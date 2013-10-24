@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Use a JQuery Mobile Control</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Use a JQuery Mobile Control</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyCustomControl</ID>
+          <ToolTip>Replace with the custom control's name</ToolTip>
+          <Default>MyCustomControl</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Use a JQuery Mobile control
+myapp.$MyScreen$.MyCustomControl_render = function (element, contentItem) {
+    createSlider(element, contentItem, 0, 100);
+};
+
+function createSlider(element, contentItem, min, max) {
+    // Generate the input element.
+    $$(element).append('<input type="range" min="' + min +
+        '" max="' + max + '" value="' + contentItem.value + '" />');
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

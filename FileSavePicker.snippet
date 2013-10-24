@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>FileSavePicker</Title>
+			<Shortcut>savepicker</Shortcut>
+			<Description>FileSavePicker</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>desc</ID>
+					<ToolTip>Description for file extension</ToolTip>
+					<Default>JPEG Image</Default>
+				</Literal>
+				<Literal>
+					<ID>ext</ID>
+					<ToolTip>File extension to show</ToolTip>
+					<Default>.jpg</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[var picker = Windows.Storage.Pickers.FileSavePicker();
+picker.fileTypeChoices.insert("$desc$", ["$ext$"]);
+
+picker.pickSaveFileAsync().then(function (file) {
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

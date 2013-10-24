@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Work with LocalSettings</Title>
+      <Description>Add a setting to the local settings.</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>savelocal</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>SettingValue</ID>
+          <Type />
+          <ToolTip>The data to store.</ToolTip>
+          <Default>"Hello world"</Default>
+          <Function />
+        </Literal>
+        <Literal Editable="true">
+          <ID>SettingName</ID>
+          <Type>System.String</Type>
+          <ToolTip>The key to reference the setting.</ToolTip>
+          <Default>Setting Name</Default>
+          <Function />
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$">
+		<![CDATA[var localSettings = Windows.Storage.ApplicationData.current.localSettings;
+localSettings.values["$SettingName$"] = $SettingValue$;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

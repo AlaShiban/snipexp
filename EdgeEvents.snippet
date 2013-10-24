@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Edge Gestures</Title>
+      <Description>Responsd to the edge gestures</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>EdgeGestures</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations />
+      <Code Language="JavaScript" Kind="method body" Delimiter="$"><![CDATA[Windows.UI.Input.EdgeGesture.getForCurrentView().addEventListener("canceled", function () {
+});
+
+Windows.UI.Input.EdgeGesture.getForCurrentView().addEventListener("completed", function () {
+});
+
+Windows.UI.Input.EdgeGesture.getForCurrentView().addEventListener("starting", function () {
+});
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

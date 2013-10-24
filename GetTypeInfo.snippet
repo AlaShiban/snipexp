@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>GetTypeInfo</Title>
+			<Shortcut>gettypeinfo</Shortcut>
+			<Description>GetTypeInfo with Reflection</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Imports>
+				<Import>
+					<Namespace>System.Reflection</Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Object>
+					<ID>type</ID>
+					<ToolTip>Class of which to get type information</ToolTip>
+					<Default>type</Default>
+				</Object>
+			</Declarations>
+			<Code Language="csharp" Kind="method body">
+				<![CDATA[TypeInfo ti = typeof($type$).GetTypeInfo();]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

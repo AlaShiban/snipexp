@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Set the screen title dynamically</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Set the screen title dynamically</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Customer</ID>
+          <ToolTip>Replace with your entity's name</ToolTip>
+          <Default>Customer</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>CompanyName</ID>
+          <ToolTip>Replace with your property's name</ToolTip>
+          <Default>CompanyName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Set the screen title dynamically
+myapp.$MyScreen$.created = function (screen) {
+
+    var name;
+
+    name = screen.$Customer$.$CompanyName$;
+    screen.details.displayName = "Information about: " + name;
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

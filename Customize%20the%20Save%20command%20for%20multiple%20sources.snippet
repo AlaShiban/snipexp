@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Customize the Save command to save to multiple data sources</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Customize the Save command to save to multiple data sources</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>NorthwindData</ID>
+          <ToolTip>Replace with the name of an external data source</ToolTip>
+          <Default>NorthwindData</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Customize the Save command to save to multiple data sources
+myapp.onsavechanges = function (e) {
+
+    var promises = [];
+
+    promises.push(myapp.activeDataWorkspace.$NorthwindData$.saveChanges());
+
+    promises.push(myapp.activeDataWorkspace.ApplicationData.saveChanges());
+
+    e.detail.promise = WinJS.Promise.join(promises);
+
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

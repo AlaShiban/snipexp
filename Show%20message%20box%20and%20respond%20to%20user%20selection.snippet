@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Show message box and respond to user selection</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Show a message box and respond to user selection</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyMethod</ID>
+          <ToolTip>Replace with the appropriate method name</ToolTip>
+          <Default>MyMethod</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Show a message box, and respond to a user selection
+myapp.$MyScreen$.MyMethod_execute = function (screen) {
+    msls.showMessageBox("Please choose the appropriate button", {
+
+        title: "This is a message box",
+
+        buttons: msls.MessageBoxButtons.yesNoCancel
+
+    }).then(function (result) {
+
+        if (result === msls.MessageBoxResult.yes) {
+
+            alert("Yes button was chosen");
+
+        }
+
+        else if (result === msls.MessageBoxResult.no) {
+
+            alert("No button was chosen");
+
+        }
+
+        else if (result === msls.MessageBoxResult.cancel) {
+
+            alert("Please choose either Yes or No");
+
+        }
+
+    });
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

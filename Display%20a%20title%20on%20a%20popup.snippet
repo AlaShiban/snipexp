@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Display a title on a popup</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Display a title on a popup</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with the name of your screen</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Display a title on a popup
+myapp.$MyScreen$.LocalProperty_postRender = function (element, contentItem) {
+    element.textContent = "This is the title";
+    $$(element).css("font-size", "23px");
+    $$(element).css("font-weight", "bold");
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

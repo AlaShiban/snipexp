@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get Listing Information</Title>
+			<Shortcut>getlisting</Shortcut>
+			<Description>Get ListingInformation for the current application</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[Windows.ApplicationModel.Store.CurrentApp.loadListingInformationAsync().done(function (listingInformation) {
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

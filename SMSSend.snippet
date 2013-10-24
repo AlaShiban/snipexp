@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Send SMS</Title>
+			<Shortcut>smssend</Shortcut>
+			<Description>Send an SMS</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>to</ID>
+					<ToolTip>Recipient of SMS</ToolTip>
+					<Default>to</Default>
+				</Literal>
+				<Literal>
+					<ID>body</ID>
+					<ToolTip>Body of SMS</ToolTip>
+					<Default>body</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[Windows.Devices.Sms.SmsDevice.getDefaultAsync().then(function (device) {
+	var msg = new Windows.Devices.Sms.SmsTextMessage();
+	msg.To = "$to$";
+	msg.Body = "$body$";
+	device.sendMessageAsync(msg).done(function () {
+	});
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

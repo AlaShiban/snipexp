@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get License Information</Title>
+			<Shortcut>getlicense</Shortcut>
+			<Description>Get LicenseInformation for the current application</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[var licenseInformation = Windows.ApplicationModel.Store.CurrentApp.licenseInformation;
+if (licenseInformation.isActive)
+{
+	if (licenseInformation.isTrial)
+	{
+		// Trial mode - restrict functionality as appropriate
+	}
+	else
+	{
+		// Full mode - all all functionality as appropriate
+	}
+}
+else
+{
+}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

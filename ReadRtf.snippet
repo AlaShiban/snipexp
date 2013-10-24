@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Get RTF From clipboard</Title>
+      <Description>Get an RTF snippet from the clipboard.</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>PasteRTF</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$">
+        <![CDATA[var dataPackage = new Windows.ApplicationModel.DataTransfer.Clipboard.getContent();
+if (dataPackage.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.rtf)) {
+
+    dataPackage.getRtfAsync().then(function (rtf) {
+
+    });
+}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

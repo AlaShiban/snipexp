@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.1.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>FormatNumber</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Format a number</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyNumericField</ID>
+          <ToolTip>Replace with your property's name</ToolTip>
+          <Default>MyNumericField</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript"><![CDATA[// Format a number
+myapp.$MyScreen$.MyNumericField_postRender = function (element, contentItem) {
+    contentItem.dataBind("value", function (value) {
+        if (value) {
+            $$(element).text(value.toFixed(2));
+        }
+    });
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet  Format="1.0.0">
+    <Header>
+      <Author>Alex Fidanov</Author>
+      <Description>Create a test class with different data types</Description>
+      <Title>Test Class Types</Title>
+      <Shortcut>types</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>INotifyPropertyChanged</ID>
+          <Function>
+            SimpleTypeName(global::System.ComponentModel)
+          </Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>ObservableCollection</ID>
+          <Function>
+            SimpleTypeName(global::System.Collections.ObjectModel)
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[public class TestTypes : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        #region String (INotifyPropertyChanged Property)
+        private string _string;
+
+        public string String
+        {
+            get { return _string; }
+            set
+            {
+                _string = value;
+                RaisePropertyChanged("String");
+            }
+        }
+        #endregion
+        #region Integer (INotifyPropertyChanged Property)
+        private int _integer;
+
+        public int Integer
+        {
+            get { return _integer; }
+            set
+            {
+                _integer = value;
+                RaisePropertyChanged("Integer");
+            }
+        }
+        #endregion
+        #region Double (INotifyPropertyChanged Property)
+        private double _double;
+
+        public double Double
+        {
+            get { return _double; }
+            set
+            {
+                _double = value;
+                RaisePropertyChanged("Double");
+            }
+        }
+        #endregion
+        #region Decimal (INotifyPropertyChanged Property)
+        private decimal _decimal;
+
+        public decimal Decimal
+        {
+            get { return _decimal; }
+            set
+            {
+                _decimal = value;
+                RaisePropertyChanged("Decimal");
+            }
+        }
+        #endregion
+        #region Boolean (INotifyPropertyChanged Property)
+        private bool _boolean;
+
+        public bool Boolean
+        {
+            get { return _boolean; }
+            set
+            {
+                _boolean = value;
+                RaisePropertyChanged("Boolean");
+            }
+        }
+        #endregion
+        #region DateTime (INotifyPropertyChanged Property)
+        private DateTime _dateTime;
+
+        public DateTime DateTime
+        {
+            get { return _dateTime; }
+            set
+            {
+                _dateTime = value;
+                RaisePropertyChanged("DateTime");
+            }
+        }
+        #endregion
+        #region Tag (INotifyPropertyChanged Property)
+        private object _tag;
+
+        public object Tag
+        {
+            get { return _tag; }
+            set
+            {
+                _tag = value;
+                RaisePropertyChanged("Tag");
+            }
+        }
+        #endregion
+
+        public TestTypes()
+        {
+            this.String = "";
+            this.Integer = 0;
+            this.Double = 0;
+            this.Decimal = 0;
+            this.DateTime = DateTime.Now;
+            this.Boolean = false;
+        }
+        public TestTypes(int seed)
+        {
+            Random random = new Random(seed);
+            this.String = RandomString(random.Next(5, 10));
+            this.Integer = random.Next();
+            this.Double = random.NextDouble();
+            this.Decimal = seed;
+            this.DateTime = DateTime.Now.AddDays(seed);
+            this.Boolean = seed % 2 == 0;
+        }
+
+        public static global::System.Collections.ObjectModel.ObservableCollection<TestTypes> GetTypes(int number)
+        {
+            global::System.Collections.ObjectModel.ObservableCollection<TestTypes> source = new global::System.Collections.ObjectModel.ObservableCollection<TestTypes>();
+
+            for (int i = 0; i < number; i++)
+            {
+                source.Add(new TestTypes(i));
+            }
+            return source;
+        }
+
+        #region INotifyPropertyChanged values
+
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new global::System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
+
+        private static string RandomString(int size)
+        {
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            Random seed = new Random((int)DateTime.Now.Millisecond);
+            System.Threading.Thread.Sleep(1);
+            Random random = new Random(seed.Next(0, 1000));
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+            return builder.ToString();
+        }
+    }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

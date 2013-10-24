@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet  Format="1.0.0">
+    <Header>
+      <Author>Alex Fidanov</Author>
+      <Description>Create a test class Person</Description>
+      <Title>Test Class Person</Title>
+      <Shortcut>person</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>INotifyPropertyChanged</ID>
+          <Function>
+            SimpleTypeName(global::System.ComponentModel)
+          </Function>
+        </Literal>
+        <Literal Editable="false">
+          <ID>ObservableCollection</ID>
+          <Function>
+            SimpleTypeName(global::System.Collections.ObjectModel)
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[public class Person : global::System.ComponentModel.INotifyPropertyChanged
+    {
+        #region FirstName (INotifyPropertyChanged Property)
+        private string _firstName;
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            set
+            {
+                _firstName = value;
+                RaisePropertyChanged("FirstName");
+            }
+        }
+        #endregion
+        #region LastName (INotifyPropertyChanged Property)
+        private string _lastName;
+
+        public string LastName
+        {
+            get { return _lastName; }
+            set
+            {
+                _lastName = value;
+                RaisePropertyChanged("LastName");
+            }
+        }
+        #endregion
+        #region Email (INotifyPropertyChanged Property)
+        private string _email;
+
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                _email = value;
+                RaisePropertyChanged("Email");
+            }
+        }
+        #endregion
+        #region Age (INotifyPropertyChanged Property)
+        private int _age;
+
+        public int Age
+        {
+            get { return _age; }
+            set
+            {
+                _age = value;
+                RaisePropertyChanged("Age");
+            }
+        }
+        #endregion
+        #region BirthDay (INotifyPropertyChanged Property)
+        private DateTime _birthday;
+
+        public DateTime BirthDay
+        {
+            get { return _birthday; }
+            set
+            {
+                _birthday = value;
+                RaisePropertyChanged("BirthDay");
+            }
+        }
+        #endregion
+        #region Gender (INotifyPropertyChanged Property)
+        private Genders _gender;
+
+        public Genders Gender
+        {
+            get { return _gender; }
+            set
+            {
+                _gender = value;
+                RaisePropertyChanged("Gender");
+            }
+        }
+        #endregion
+        #region IsSuperhero (INotifyPropertyChanged Property)
+        private bool _isSuperhero;
+
+        public bool IsSuperhero
+        {
+            get { return _isSuperhero; }
+            set
+            {
+                _isSuperhero = value;
+                RaisePropertyChanged("IsSuperhero");
+            }
+        }
+        #endregion
+        #region Interests (INotifyPropertyChanged Property)
+        private List<object> _interests;
+
+        public List<object> Interests
+        {
+            get { return _interests; }
+            set
+            {
+                _interests = value;
+                RaisePropertyChanged("Interests");
+            }
+        }
+        #endregion
+
+        public static global::System.Collections.ObjectModel.ObservableCollection<Person> GetPeople()
+        {
+            global::System.Collections.ObjectModel.ObservableCollection<Person> source = new global::System.Collections.ObjectModel.ObservableCollection<Person>();
+
+            source.Add(new Person("Jack", "Sparrow", 40, Genders.Male, false, new List<object>() { "Pirate stuff", "Sparrows", "Pirate Ships", "Rum", "Funny Hats" }));
+            source.Add(new Person("Hulk", "Hulk", 35, Genders.Male, true, new List<object>() { "Green", "Tanks", "Breaking stuff" }));
+            source.Add(new Person("Cat", "Woman", 24, Genders.Female, true, new List<object>() { "Whiskas", "More Whiskas" }));
+            source.Add(new Person("Frodo", "Baggins", 20, Genders.Male, false, new List<object>() { "Ring", "Ring", "Rings" }));
+            source.Add(new Person("Luke", "Skywalker", 28, Genders.Male, false, new List<object>() { "Lightsabers", "Force", "Strong Force", "Jumping" }));
+
+            return source;
+        }
+        public static global::System.Collections.ObjectModel.ObservableCollection<Person> GetPeople(int number)
+        {
+            global::System.Collections.ObjectModel.ObservableCollection<Person> source = new global::System.Collections.ObjectModel.ObservableCollection<Person>();
+
+            for (int i = 0; i < number; i++)
+            {
+                int age = new Random(i).Next(10, 70);
+                source.Add(new Person(RandomString(5), RandomString(7), age, age % 2 == 0 ? Genders.Male : Genders.Female));
+            }
+            return source;
+        }
+        public Person()
+        {
+            this.FirstName = "New First Name";
+            this.LastName = "New Last Name";
+            this.Age = 0;
+            this.Email = "New Email Address";
+            this.BirthDay = DateTime.Now;
+        }
+        public Person(string firstName, string lastName)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = firstName[0] + lastName + "@email.com";
+        }
+        public Person(string firstName, string lastName, int age)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = firstName[0] + lastName + "@email.com";
+            this.Age = age;
+            this.BirthDay = DateTime.Now.AddYears(-age).AddDays(new Random().Next(0, 100));
+        }
+        public Person(string firstName, string lastName, int age, Genders gender)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = firstName[0] + lastName + "@email.com";
+            this.Age = age;
+            this.BirthDay = DateTime.Now.AddYears(-age).AddDays(new Random().Next(0, 100));
+            this.Gender = gender;
+        }
+        public Person(string firstName, string lastName, int age, Genders gender, bool isSuperhero, List<object> interests)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = firstName[0] + lastName + "@email.com";
+            this.Age = age;
+            this.BirthDay = DateTime.Now.AddYears(-age).AddDays(new Random().Next(0, 100));
+            this.Gender = gender;
+            this.IsSuperhero = isSuperhero;
+            this.Interests = interests;
+        }
+        #region INotifyPropertyChanged values
+
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new global::System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        #endregion
+
+        public enum Genders
+        {
+            Male, Female
+        }
+        private static string RandomString(int size)
+        {
+            System.Text.StringBuilder builder = new System.Text.StringBuilder();
+            Random seed = new Random((int)DateTime.Now.Millisecond);
+            System.Threading.Thread.Sleep(1);
+            Random random = new Random(seed.Next(0, 1000));
+            char ch;
+            for (int i = 0; i < size; i++)
+            {
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
+                builder.Append(ch);
+            }
+            return builder.ToString();
+        }
+    }
+]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

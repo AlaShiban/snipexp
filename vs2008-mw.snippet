@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<!-- GUIDANCE: http://www.dofactory.com/Patterns/PatternSingleton.aspx -->
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>simple singleton</Title>
+			<Shortcut>pcsngltn</Shortcut>
+			<Author>Matias Wald</Author>
+			<Description>simple singleton pattern (including class)</Description>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>SingletonClassName</ID>
+					<ToolTip>Replaces with class name</ToolTip>
+					<Default>Singleton</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Kind="type decl">
+				<![CDATA[public class $SingletonClassName$
+	{
+		// declare singleton field
+		private static $SingletonClassName$ instance = null;
+		
+		// Protected constructor.
+		protected $SingletonClassName$() 
+		{
+		}
+		
+		// Get instance
+		public static $SingletonClassName$ GetInstance()
+		{
+			if(instance == null) instance = new $SingletonClassName$();
+		
+			return instance;
+		}
+		
+		// class implementation
+		$end$
+	}
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>simple singleton</Title>
+			<Shortcut>sngltn</Shortcut>
+			<Author>Matias Wald</Author>
+			<Description>simple singleton pattern</Description>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object Editable="false">
+					<ID>SingletonType</ID>
+					<ToolTip>Singleton type</ToolTip>
+					<Function>ClassName()</Function>
+				</Object>
+			</Declarations>
+			<Code Language="CSharp" Kind="method decl">
+				<![CDATA[// declare singleton field
+		private static $SingletonType$ instance = null;
+		// Protected constructor.
+		protected $SingletonType$() {}
+		// Get instance
+		public static $SingletonType$ GetInstance()
+		{
+			if(instance == null) instance = new $SingletonType$();
+		
+			return instance;
+		}
+	]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	
+  <!-- TODO: thread safe singleton pattern -->
+  <!-- TODO: thread safe x2 locked singleton pattern -->
+  <!-- TODO: factory pattern -->
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>public static method returning type</Title>
+      <Shortcut>psm</Shortcut>
+      <Author>Matias Wald</Author>
+      <Description>public static method with return type snippet</Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Object Editable="true">
+          <ID>ReturnType</ID>
+          <ToolTip>Return type for method</ToolTip>
+          <Default>object</Default>
+        </Object>
+        <Literal Editable="true">
+          <ID>MethodLogicDoc</ID>
+          <ToolTip>Replaces with method logic comments</ToolTip>
+          <Default>insert doc</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MethodName</ID>
+          <ToolTip>Replaces with method name</ToolTip>
+          <Default>MyMethod</Default>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MethodParams</ID>
+          <ToolTip>Replaces with method parameters</ToolTip>
+          <Default></Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="method decl">
+        <![CDATA[public static $ReturnType$ $MethodName$($MethodParams$)
+		{
+			$ReturnType$ returnValue = null;
+			// $MethodLogicDoc$
+      $end$
+      
+			return returnValue;
+		}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>public class with constructor</Title>
+      <Shortcut>pcctor</Shortcut>
+      <Author>Matias Wald</Author>
+      <Description>public class with constructor snippet</Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ClassName</ID>
+          <ToolTip>Replaces with class name</ToolTip>
+          <Default>StaticClass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="type decl">
+        <![CDATA[public class $ClassName$
+	{
+		public $ClassName$()
+		{
+			$end$
+		}
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>public static class</Title>
+      <Shortcut>psc</Shortcut>
+      <Author>Matias Wald</Author>
+      <Description>public static class snippet</Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ClassName</ID>
+          <ToolTip>Replaces with class name</ToolTip>
+          <Default>StaticClass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="type decl">
+        <![CDATA[public static class $ClassName$
+	{
+		$end$
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+  
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>public class</Title>
+      <Shortcut>pc</Shortcut>
+      <Author>Matias Wald</Author>
+      <Description>public class snippet</Description>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ClassName</ID>
+          <ToolTip>Replaces with class name</ToolTip>
+          <Default>StaticClass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp" Kind="type decl">
+        <![CDATA[public class $ClassName$
+	{
+		$end$
+	}]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

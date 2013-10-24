@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Message Dialog with default</Title>
+      <Description>Show a message dialog with a default button</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>DefaultButtonDialog</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>msg</ID>
+          <Type></Type>
+          <ToolTip>Message dialog text.</ToolTip>
+          <Default>Hello world</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>button1</ID>
+          <Type></Type>
+          <ToolTip>Text in button.</ToolTip>
+          <Default>Hello!</Default>
+          <Function></Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>button2</ID>
+          <Type></Type>
+          <ToolTip>Text in button.</ToolTip>
+          <Default>Goodbye.</Default>
+          <Function></Function>
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$"><![CDATA[// Create the message dialog and set its content
+var messageDialog = new Windows.UI.Popups.MessageDialog("$msg$");
+
+// Add buttons and set their callback functions
+messageDialog.commands.append( new Windows.UI.Popups.UICommand("$button1$", function(command)
+{
+}));
+
+messageDialog.commands.append(new Windows.UI.Popups.UICommand("$button2$", function (command) {
+}));
+
+// Set the command that will be invoked by default
+messageDialog.defaultCommandIndex = 1;
+
+// Show the message dialog and wait
+messageDialog.showAsync().then(function (result) {
+            
+});]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

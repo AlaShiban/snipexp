@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Set default value on a data entry screen</Title>
+      <Author>progalex@hotmail.com</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Object Editable="true">
+          <ID>EntityName</ID>
+          <ToolTip>Replace with the name of your entity</ToolTip>
+          <Default>EntityName</Default>
+          <Function>
+          </Function>
+          <Type>
+          </Type>
+        </Object>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Set a default value on a data entry screen
+myapp.$EntityName$.created = function (entity) {
+    entity.OrderDate = new Date();
+    entity.OrderStatus = 'New';
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

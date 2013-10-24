@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Add URI to clipboard</Title>
+      <Description>Add an URI to the clipboard</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>CopyUri</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$"><![CDATA[// create datapackage
+var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
+dataPackage.setUri(new Windows.Foundation.Uri("http://www.microsoft.com"));
+
+// add to clipboard
+Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

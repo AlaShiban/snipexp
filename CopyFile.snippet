@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Copy File</Title>
+			<Shortcut>copyfile</Shortcut>
+			<Description>Copy a StorageFile to a StorageFolder</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object>
+					<ID>source</ID>
+					<ToolTip>Source StorageFile</ToolTip>
+					<Default>srcFile</Default>
+				</Object>
+				<Object>
+					<ID>dir</ID>
+					<ToolTip>Destination StorageFolder</ToolTip>
+					<Default>destination</Default>
+				</Object>
+				<Literal>
+					<ID>name</ID>
+					<ToolTip>Destination file name</ToolTip>
+					<Default>filename</Default>
+				</Literal>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[$source$.copyAsync($dir$, "$name$").done(function (destFile) {
+});;]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

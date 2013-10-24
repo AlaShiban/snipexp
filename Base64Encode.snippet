@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Base64 Encode</Title>
+			<Shortcut>b64encode</Shortcut>
+			<Description>Encode a buffer to a Base64 string</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Object>
+					<ID>buffer</ID>
+					<ToolTip>Buffer to encode</ToolTip>
+					<Default>buffer</Default>
+				</Object>
+			</Declarations>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[var b64string = Windows.Security.Cryptography.CryptographicBuffer.encodeToBase64String($buffer$);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Write a file in settings</Title>
+      <Description>Create a file and write to it in roaming settings.</Description>
+      <Author>Coding4Fun</Author>
+      <SnippetTypes>
+	<SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Shortcut>saveroamingfile</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>filename</ID>
+          <Type />
+          <ToolTip>The filename for the file to write to.</ToolTip>
+          <Default>filename</Default>
+          <Function />
+        </Literal>
+        <Literal Editable="true">
+          <ID>Data</ID>
+          <Type />
+          <ToolTip>The data to write to the file.</ToolTip>
+          <Default>Hello World</Default>
+          <Function />
+        </Literal>
+      </Declarations>
+      <Code Language="JavaScript" Kind="method body" Delimiter="$">
+		<![CDATA[var roamingFolder = Windows.Storage.ApplicationData.current.roamingFolder;
+roamingFolder.createFileAsync("$filename$", Windows.Storage.CreationCollisionOption.openIfExists).then(function (file) {
+	Windows.Storage.FileIO.writeTextAsync(file, "$Data$").then(function () {
+	});
+});]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

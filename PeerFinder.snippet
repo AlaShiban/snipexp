@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Find peers with PeerFinder</Title>
+			<Shortcut>findpeers</Shortcut>
+			<Description>Find all peers with PeerFinder</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[Windows.Networking.Proximity.PeerFinder.findAllPeersAsync().then(function (peers) {
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

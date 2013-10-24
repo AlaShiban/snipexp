@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Validate data on a screen</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Validate data on a screen</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Contact</ID>
+          <ToolTip>Replace with your entity's name</ToolTip>
+          <Default>Contact</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ContactName</ID>
+          <ToolTip>Replace with the name of the property to be validated</ToolTip>
+          <Default>ContactName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Validate data on a screen
+myapp.$MyScreen$.beforeApplyChanges = function (screen) {
+    if (screen.$Contact$R.$ContactName$.indexOf('!') != -1) {
+
+        screen.findContentItem("$ContactName$").validationResults = [
+
+        new msls.ValidationResult(
+
+        screen.$Contact$.details.properties.contactName,
+
+        "$Contact$ Name cannot contain the character '!'.")
+
+        ];
+
+        return false;
+
+    }
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

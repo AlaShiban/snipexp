@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Enable or disable a button</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Enable or disable a button</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyMethod</ID>
+          <ToolTip>Replace with your method's name</ToolTip>
+          <Default>MyMethod</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyButton</ID>
+          <ToolTip>Replace with the name of the button to be disabled/enabled</ToolTip>
+          <Default>MyButton</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Enable or disable a button
+myapp.$MyScreen$.MyMethod_execute = function (screen) {
+    screen.findContentItem("$MyButton$").isEnabled = false;
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

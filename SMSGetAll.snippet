@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Get All SMS Messages</Title>
+			<Shortcut>smsgetall</Shortcut>
+			<Description>Get all SMS messages on a device</Description>
+			<Author>Coding4Fun</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Code Language="JavaScript" Kind="method body">
+				<![CDATA[Windows.Devices.Sms.SmsDevice.getDefaultAsync().then(function (device) {
+    device.MessageStore.getMessagesAsync(Windows.Devices.Sms.SmsMessageFilter.all).then(function (messages) {
+    });
+});]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

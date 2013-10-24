@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Delete selected item on a screen or popup</Title>
+      <Author>LightSwitch Team</Author>
+      <Description>Delete selected item on a screen or popup</Description>
+      <HelpUrl>http://code.msdn.microsoft.com/wpapps/JavaScript-for-LightSwitch-f1ec057c</HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>MyScreen</ID>
+          <ToolTip>Replace with your screen's name</ToolTip>
+          <Default>MyScreen</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>MyButton</ID>
+          <ToolTip>Replace with the name of your button</ToolTip>
+          <Default>MyButton</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>customers</ID>
+          <ToolTip>Replace with your collection</ToolTip>
+          <Default>customers</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="javascript"><![CDATA[// Delete the selected item on a screen or popup
+myapp.$MyScreen$.MyButton_execute = function (screen) {
+    screen.getCustomers().then(function ($customers$) {
+        $customers$.deleteSelected();
+    });
+};]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
