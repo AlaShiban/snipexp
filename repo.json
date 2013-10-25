@@ -112,7 +112,7 @@
       ]
    },
    {
-      "author":"LightSwitch Team",
+      "author":"Adrian is fun!",
       "desc":"Adjust the UI for different form factors",
       "title":"Adjust the UI for different form factors",
       "code":"// Adjust the UI for different form factors\nmyapp.$MyScreen$.FieldToHide_postRender = function (element, contentItem) {\n    $$(element).addClass(\"hidden-on-phone\");\n};\n// Add the following to the @media section of the user-customizations.css file.\n// .hidden-on-phone {\n//     display: none;\n// }",
