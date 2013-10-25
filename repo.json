@@ -730,7 +730,7 @@
       ]
    },
    {
-      "author":"John Sheehan (@johnsheehan)",
+      "author":"Natalie Rocks",
       "desc":"Snippet suggested by Dave Ward (@Encosia). More info: http://encosia.com/2008/03/27/using-jquery-to-consume-aspnet-json-web-services/",
       "title":"jQuery: $.ajax() template for calling ASP.NET WebService/PageMethod",
       "code":"$$.ajax({\n\ttype: \"POST\",\n\tcontentType: \"application/json; charset=utf-8\",\n\tdataType: \"$dataType$\",\n\turl: \"$url$\",\n\tdata: \"$data$\",\n\tsuccess: function(response) {\n\t\t$end$\n\t}\n});",
